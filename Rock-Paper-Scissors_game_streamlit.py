@@ -66,3 +66,8 @@ if user_choice:
     else:
         st.error("You Lose! 😢")
 
+# LinkedIn Button
+st.markdown("[![Connect on LinkedIn](https://img.shields.io/badge/Connect-Kartike%20Raj%20Choudhary-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/kartike-raj-choudhary/)")
+
+# Footer
+st.markdown("**Made by Kartike Raj Choudhary**")
