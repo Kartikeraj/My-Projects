@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Python Project</title>
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyScript Love Calculator</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
 <body>
 
-    <h2>My Python Project Demo</h2>
+    <h1>❤️ Love Score Calculator (PyScript)</h1>
+    <p>The Python script calculates the love score for "Angela Yu" and "Jack Bauer" and displays the result below.</p>
+    
+    <div id="output-div"></div>
 
-    <p>Enter your number:</p>
-    <input id="user-input" />
+    <py-script output="output-div">
+# Your original Python code goes here
 
-    <button onclick="run_python()">Run</button>
+def calculate_love_score(name1, name2):
+    name3 = name1 + name2
+    
+    # Count occurrences of letters in 'true'
+    count1 = 0
+    for i in name3:
+        if i.lower() in "true":
+            count1 += 1
+            
+    # Count occurrences of letters in 'love'
+    count2 = 0
+    for i in name3:
+        if i.lower() in "love":
+            count2 += 1
+    
+    # Concatenate counts and convert to integer score
+    concatinate = int(str(count1) + str(count2))
+    
+    # The print() function will output to the element with id="output-div"
+    print(f"The Love Score is: {concatinate}")
 
-    <p>Output:</p>
-    <div id="output"></div>
-
-    <py-script>
-from pyscript import display
-
-def run_python():
-    value = float(Element("user-input").element.value)
-    display(f"You entered: {value}", target="output")
+calculate_love_score("Angela Yu", "Jack Bauer")
     </py-script>
-
-    <script>
-        function run_python() {
-            pyscript.runPython("run_python()")
-        }
-    </script>
 
 </body>
 </html>
