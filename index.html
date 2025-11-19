@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Python Project</title>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+
+    <h2>My Python Project Demo</h2>
+
+    <p>Enter your number:</p>
+    <input id="user-input" />
+
+    <button onclick="run_python()">Run</button>
+
+    <p>Output:</p>
+    <div id="output"></div>
+
+    <py-script>
+from pyscript import display
+
+def run_python():
+    value = float(Element("user-input").element.value)
+    display(f"You entered: {value}", target="output")
+    </py-script>
+
+    <script>
+        function run_python() {
+            pyscript.runPython("run_python()")
+        }
+    </script>
+
+</body>
+</html>
